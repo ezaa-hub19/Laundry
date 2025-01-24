@@ -14,8 +14,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Selamat Pagi, Reza"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="0dp"
         android:layout_marginStart="10dp"
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
@@ -28,6 +29,7 @@
         android:text="22 Januari 2025"
         android:layout_marginStart="10dp"
         android:textSize="16sp"
+        android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@+id/greeting_text"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="4dp" />
@@ -35,175 +37,164 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/estimasi_card"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="250dp"
         android:layout_marginTop="16dp"
         app:cardCornerRadius="12dp"
         app:cardElevation="4dp"
         app:layout_constraintTop_toBottomOf="@+id/date_text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="450dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:background="@color/white">
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:padding="16dp">
 
             <TextView
                 android:id="@+id/estimasi_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Estimasi Hari Ini"
+                android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/estimasi_amount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Rp. 40.000,-"
+                android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <LinearLayout
                 android:id="@+id/icons_section"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="16dp"
-                app:layout_constraintTop_toBottomOf="@+id/estimasi_title"
-                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:weightSum="3">
-
-                <!-- Icon 1 -->
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:gravity="center">
-
-                    <ImageView
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:src="@drawable/lending" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Transaksi"
-                        android:textSize="14sp"
-                        android:layout_marginTop="4dp" />
-                </LinearLayout>
-
-                <!-- Icon 2 -->
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:gravity="center">
-
-                    <ImageView
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:src="@drawable/service" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Pelanggan"
-                        android:textSize="14sp"
-                        android:layout_marginTop="4dp" />
-                </LinearLayout>
-
-                <!-- Icon 3 -->
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:gravity="center">
-
-                    <ImageView
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:src="@drawable/monitor" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Laporan"
-                        android:textSize="14sp"
-                        android:layout_marginTop="4dp" />
-                </LinearLayout>
-            </LinearLayout>
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
-
-    <TextView
-        android:id="@+id/reminder_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Siap melayani pelanggan dengan setulus hati"
-        android:textSize="16sp"
-        android:layout_marginStart="10dp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/estimasi_card"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="16dp" />
-
-    <TextView
-        android:id="@+id/sub_reminder_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Jangan Kecewakan Pelanggan"
-        android:layout_marginStart="10dp"
-        android:textSize="14sp"
-        app:layout_constraintTop_toBottomOf="@+id/reminder_text"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/grid_menu"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/sub_reminder_text"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="4dp"
-        android:layout_marginTop="16dp">
-
-        <GridLayout
-            tools:ignore="MissingConstraints"
-            android:layout_width="match_parent"
-            android:layout_height="220dp"
-            android:columnCount="3"
-            android:rowCount="2"
-            android:useDefaultMargins="true">
-
-            <!-- Card 1 -->
-            <androidx.cardview.widget.CardView
-                android:layout_width="110dp"
-                android:layout_height="100dp"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="4dp"
-                android:backgroundTint="@color/white">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/estimasi_title">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
                     android:orientation="vertical">
 
                     <ImageView
                         android:layout_width="48dp"
                         android:layout_height="48dp"
+                        android:layout_marginStart="-80dp"
+                        android:src="@drawable/lending" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-40dp"
+                        android:layout_marginStart="10dp"
+                        android:text="Transaksi"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="-80dp"
+                        android:src="@drawable/service" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-37dp"
+                        android:layout_marginStart="10dp"
+                        android:text="Pelanggan"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_marginTop="15dp">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="-80dp"
+                        android:src="@drawable/monitor" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-35dp"
+                        android:text="Laporan"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/grid_menu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/date_text"
+        app:layout_constraintStart_toEndOf="@id/estimasi_card"
+        android:layout_marginStart="20dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        android:layout_marginTop="16dp">
+
+        <GridLayout
+            tools:ignore="MissingConstraints"
+            android:layout_width="400dp"
+            android:layout_height="250dp"
+            android:columnCount="3"
+            android:rowCount="2"
+            android:useDefaultMargins="true">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="110dp"
+                android:layout_height="100dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                android:backgroundTint="@color/white"
+                android:layout_marginStart="-1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_marginStart="0dp">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center"
                         android:src="@drawable/profile" />
 
                     <TextView
@@ -211,6 +202,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:text="Akun"
+                        android:textColor="@color/black"
+                        android:layout_gravity="center"
                         android:textSize="14sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -220,7 +213,7 @@
                 android:layout_height="100dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp"
-                android:layout_marginStart="-250dp"
+                android:layout_marginStart="10dp"
                 android:backgroundTint="@color/white">
 
                 <LinearLayout
@@ -239,6 +232,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:text="Layanan"
+                        android:textColor="@color/black"
                         android:textSize="14sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -254,7 +248,6 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_row="0"
                     android:gravity="center"
                     android:orientation="vertical">
 
@@ -268,9 +261,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:text="Tambahan"
+                        android:textColor="@color/black"
                         android:textSize="14sp" />
                 </LinearLayout>
-
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
@@ -278,7 +271,8 @@
                 android:layout_height="100dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp"
-                android:backgroundTint="@color/white">
+                android:backgroundTint="@color/white"
+                android:layout_marginStart="0dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -296,6 +290,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:text="Pegawai"
+                        android:textColor="@color/black"
                         android:textSize="14sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -305,7 +300,7 @@
                 android:layout_height="100dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp"
-                android:layout_marginStart="-250dp"
+                android:layout_marginStart="10dp"
                 android:backgroundTint="@color/white">
 
                 <LinearLayout
@@ -324,6 +319,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:text="Cabang"
+                        android:textColor="@color/black"
                         android:textSize="14sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -352,18 +348,12 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:text="Printer"
+                        android:textColor="@color/black"
                         android:textSize="14sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_row="0"
-                android:gravity="center"
-                android:orientation="vertical">
-            </LinearLayout>
-
         </GridLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
