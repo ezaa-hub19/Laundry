@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@android:color/white">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tambah Pelanggan"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:paddingBottom="16dp" />
+
+    <TextView
+        android:id="@+id/tvNama"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:text="Nama Lengkap : "
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:layout_marginStart="7dp" />
+
+    <!-- Full Name Input -->
+    <EditText
+        android:id="@+id/editTextFullName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nama Lengkap"
+        android:padding="10dp"
+        android:background="@android:drawable/edit_text" />
+
+    <TextView
+        android:id="@+id/tvAlamat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:text="Alamat : "
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:layout_marginStart="7dp" />
+
+    <!-- Address Input -->
+    <EditText
+        android:id="@+id/editTextAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Alamat"
+        android:padding="10dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:drawable/edit_text" />
+
+    <TextView
+        android:id="@+id/tvNoHp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:text="No.HP Aktif : "
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:layout_marginStart="7dp" />
+
+    <!-- Phone Number Input -->
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="No HP Aktif"
+        android:padding="10dp"
+        android:layout_marginTop="8dp"
+        android:inputType="phone"
+        android:background="@android:drawable/edit_text" />
+
+    <!-- Submit Button -->
+    <Button
+        android:id="@+id/buttonSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Simpan"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#777777"
+        android:textColor="@android:color/white"/>
+
+</LinearLayout>
