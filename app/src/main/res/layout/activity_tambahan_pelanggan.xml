@@ -34,6 +34,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Nama Lengkap"
+        android:layout_marginTop="5dp"
         android:padding="10dp"
         android:background="@android:drawable/edit_text" />
 
@@ -41,7 +42,7 @@
         android:id="@+id/tvAlamat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="7dp"
+        android:layout_marginTop="10dp"
         android:text="Alamat : "
         android:textStyle="bold"
         android:textSize="15dp"
@@ -54,14 +55,14 @@
         android:layout_height="wrap_content"
         android:hint="Alamat"
         android:padding="10dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="5dp"
         android:background="@android:drawable/edit_text" />
 
     <TextView
         android:id="@+id/tvNoHp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="7dp"
+        android:layout_marginTop="10dp"
         android:text="No.HP Aktif : "
         android:textStyle="bold"
         android:textSize="15dp"
@@ -74,7 +75,7 @@
         android:layout_height="wrap_content"
         android:hint="No HP Aktif"
         android:padding="10dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="5dp"
         android:inputType="phone"
         android:background="@android:drawable/edit_text" />
 

@@ -13,7 +13,7 @@
         android:id="@+id/greeting_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Selamat Pagi, Reza"
+        android:text="Selamat Pagi"
         android:layout_marginTop="40dp"
         android:layout_marginStart="10dp"
         android:textSize="20sp"
