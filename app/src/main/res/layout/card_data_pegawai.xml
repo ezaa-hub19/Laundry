@@ -16,41 +16,61 @@
         android:padding="16dp">
 
         <TextView
-            android:id="@+id/tvIdPelanggan"
+            android:id="@+id/tvCardPelangganID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ID Pelanggan"
+            android:text="@string/card_pegawai_id"
             android:textSize="12sp"
             android:textColor="@android:color/darker_gray"
             android:layout_marginBottom="4dp" />
 
         <TextView
-            android:id="@+id/tvNamaPelanggan"
+            android:id="@+id/tvCardPegawaiNama"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nama Pelanggan"
+            android:text="@string/card_pegawai_nama"
             android:textSize="16sp"
             android:textStyle="bold"
             android:textColor="@android:color/black"
             android:layout_marginBottom="8dp" />
 
         <TextView
-            android:id="@+id/tvAlamat"
+            android:id="@+id/tvCardPegawaiAlamat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Alamat"
+            android:text="@string/card_pegawai_alamat"
             android:textSize="14sp"
             android:textColor="@android:color/black"
             android:layout_marginBottom="4dp" />
 
         <TextView
-            android:id="@+id/tvNoHp"
+            android:id="@+id/tvCardPegawaiNoHp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="No HP"
+            android:text="@string/card_pegawai_no_hp"
             android:textSize="14sp"
             android:textColor="@android:color/black"
             android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/tvCardPegawaiTerdaftar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/card_pegawai_terdaftar"
+            android:textSize="14sp"
+            android:textColor="@android:color/black"
+            android:layout_marginBottom="12dp"
+            android:layout_marginTop="-13dp"/>
+
+        <TextView
+            android:id="@+id/tvCardPegawaiCabang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/card_pegawai_cabang"
+            android:textSize="14sp"
+            android:textColor="@android:color/black"
+            android:layout_marginBottom="12dp"
+            android:layout_marginTop="-8dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -59,21 +79,21 @@
             android:gravity="center">
 
             <Button
-                android:id="@+id/btnHubungi"
+                android:id="@+id/btnCardPelangganHubungi"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Hubungi"
+                android:text="@string/card_pegawai_hubungi"
                 android:backgroundTint="#4fb141"
                 android:textColor="@android:color/white"
                 android:layout_marginEnd="8dp" />
 
             <Button
-                android:id="@+id/btnLihat"
+                android:id="@+id/btnCardPelangganLihat"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Lihat"
+                android:text="@string/card_pegawai_lihat"
                 android:backgroundTint="@android:color/holo_orange_light"
                 android:textColor="@android:color/white" />
         </LinearLayout>

@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import java.time.LocalDate
+import java.time.LocalTime
 import java.time.format.DateTimeFormatter
 
 class MainActivity : AppCompatActivity() {
@@ -20,10 +21,21 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        val tvGreeting = findViewById<TextView>(R.id.greeting_text)
+        tvGreeting.text = getGreetingMessage()
 
-        // Menampilkan tanggal saat ini di TextView
         val tvDate = findViewById<TextView>(R.id.date_text)
         tvDate.text = getCurrentDate()
+    }
+
+    private fun getGreetingMessage(): String {
+        val currentTime = LocalTime.now()
+        return when {
+            currentTime.hour in 5..10 -> "Selamat Pagi"
+            currentTime.hour in 11..14 -> "Selamat Siang"
+            currentTime.hour in 15..18 -> "Selamat Sore"
+            else -> "Selamat Malam"
+        }
     }
 
     private fun getCurrentDate(): String {
