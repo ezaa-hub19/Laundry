@@ -7,7 +7,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#bdbebd"
-    android:padding="16dp">
+    android:padding="16dp"
+    tools:context="com.android.ezaa.MainActivity">
 
     <TextView
         android:id="@+id/greeting_text"
@@ -109,6 +110,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/Pelanggan"
                     android:layout_marginTop="15dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -276,6 +278,7 @@
                 android:layout_marginStart="0dp">
 
                 <LinearLayout
+                    android:id="@+id/Pegawai"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"

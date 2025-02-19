@@ -17,4 +17,12 @@
     <string name="card_pegawai_lihat">Lihat</string>
     <string name="text_tambah_pelanggan">Tambah Pelanggan</string>
     <string name="text_nama_lengkap">Nama Lengkap</string>
+    <string name="validasi_nama_pelanggan">Nama pelanggan tidak boleh kosong</string>
+    <string name="validasi_alamat_pelanggan">Alamat pelanggan tidak boleh kosong</string>
+    <string name="validasi_no_hp_pelanggan">No HP pelanggan tidak boleh kosong</string>
+    <string name="validasi_cabang_pelanggan">Cabang pelanggan tidak boleh kosong</string>
+    <string name="sukses_simpan_pelanggan">sukses_simpan_pelanggan</string>
+    <string name="gagal_simpan_pelanggan">gagal_simpan_pelanggan</string>
+    <string name="validasi_nohp_pelanggan">validasi_nohp_pelanggan</string>
+    <string name="cabang">Cabang</string>
 </resources>

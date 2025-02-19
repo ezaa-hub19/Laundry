@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
+    android:id="@+id/tambah_pelanggan"
     android:padding="16dp"
-    android:background="@android:color/white">
+    android:background="@android:color/white"
+    tools:context=".pelanggan.TambahanPelangganActivity">
 
     <!-- Title -->
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/tvJudulTambahPelanggan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Tambah Pelanggan"
@@ -19,18 +21,18 @@
         android:paddingBottom="16dp" />
 
     <TextView
-        android:id="@+id/tvNama"
+        android:id="@+id/tvNamaTambahPelanggan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="7dp"
         android:text="Nama Lengkap : "
         android:textStyle="bold"
-        android:textSize="15dp"
+        android:textSize="15sp"
         android:layout_marginStart="7dp" />
 
     <!-- Full Name Input -->
     <EditText
-        android:id="@+id/editTextFullName"
+        android:id="@+id/etNamaTambahPelanggan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Nama Lengkap"
@@ -39,18 +41,18 @@
         android:background="@android:drawable/edit_text" />
 
     <TextView
-        android:id="@+id/tvAlamat"
+        android:id="@+id/tvAlamatTambahPelanggan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="Alamat : "
         android:textStyle="bold"
-        android:textSize="15dp"
+        android:textSize="15sp"
         android:layout_marginStart="7dp" />
 
     <!-- Address Input -->
     <EditText
-        android:id="@+id/editTextAddress"
+        android:id="@+id/etAlamatTambahPelanggan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Alamat"
@@ -59,18 +61,18 @@
         android:background="@android:drawable/edit_text" />
 
     <TextView
-        android:id="@+id/tvNoHp"
+        android:id="@+id/tvNoHpTambahPelanggan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="No.HP Aktif : "
         android:textStyle="bold"
-        android:textSize="15dp"
+        android:textSize="15sp"
         android:layout_marginStart="7dp" />
 
     <!-- Phone Number Input -->
     <EditText
-        android:id="@+id/editTextPhone"
+        android:id="@+id/etNoHpTambahPelanggan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="No HP Aktif"
@@ -79,9 +81,30 @@
         android:inputType="phone"
         android:background="@android:drawable/edit_text" />
 
+    <TextView
+        android:id="@+id/tvCabangTambahPelanggan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Cabang : "
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:layout_marginStart="7dp" />
+
+    <!-- Phone Number Input -->
+    <EditText
+        android:id="@+id/etCabangTambahPelanggan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Cabang"
+        android:padding="10dp"
+        android:layout_marginTop="5dp"
+        android:inputType="phone"
+        android:background="@android:drawable/edit_text" />
+
     <!-- Submit Button -->
     <Button
-        android:id="@+id/buttonSubmit"
+        android:id="@+id/btSimpanTambahPelanggan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Simpan"

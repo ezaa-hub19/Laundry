@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tambah_pegawai"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="@android:color/white">
+    android:background="@android:color/white"
+    tools:context=".pegawai.TambahPegawaiActivity">
 
     <!-- Title -->
     <TextView
@@ -25,7 +27,7 @@
         android:layout_marginTop="7dp"
         android:text="Nama Lengkap : "
         android:textStyle="bold"
-        android:textSize="15dp"
+        android:textSize="15sp"
         android:layout_marginStart="7dp" />
 
     <!-- Full Name Input -->
@@ -45,7 +47,7 @@
         android:layout_marginTop="10dp"
         android:text="Alamat : "
         android:textStyle="bold"
-        android:textSize="15dp"
+        android:textSize="15sp"
         android:layout_marginStart="7dp" />
 
     <!-- Address Input -->
@@ -65,7 +67,7 @@
         android:layout_marginTop="10dp"
         android:text="No.HP Aktif : "
         android:textStyle="bold"
-        android:textSize="15dp"
+        android:textSize="15sp"
         android:layout_marginStart="7dp" />
 
     <!-- Phone Number Input -->
@@ -86,7 +88,7 @@
         android:layout_marginTop="10dp"
         android:text="Cabang :"
         android:textStyle="bold"
-        android:textSize="15dp"
+        android:textSize="15sp"
         android:layout_marginStart="7dp" />
 
     <!-- Phone Number Input -->
