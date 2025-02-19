@@ -7,7 +7,7 @@
     android:id="@+id/tambah_pelanggan"
     android:padding="16dp"
     android:background="@android:color/white"
-    tools:context=".pelanggan.TambahanPelangganActivity">
+    tools:context="com.ezaa.laundry.pelanggan.TambahanPelangganActivity">
 
     <!-- Title -->
     <TextView

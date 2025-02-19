@@ -1,8 +1,9 @@
-package com.android.ezaa
+package com.ezaa.laundry
 
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -10,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.ezaa.laundry.R
 import com.ezaa.laundry.pegawai.DataPegawaiActivity
 import com.ezaa.laundry.pelanggan.DataPelangganActivity
 import java.time.LocalDate
@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         val tvGreeting = findViewById<TextView>(R.id.greeting_text)
         tvGreeting.text = getGreetingMessage()
 
-        val pelangganMenu = findViewById<LinearLayout>(R.id.Pelanggan)
+        val pelangganMenu = findViewById<ImageView>(R.id.Pelanggan)
         pelangganMenu.setOnClickListener {
             val intent = Intent(this, DataPelangganActivity::class.java)
             startActivity(intent)

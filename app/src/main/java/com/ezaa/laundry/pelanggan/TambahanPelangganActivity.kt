@@ -24,7 +24,6 @@ class TambahanPelangganActivity : AppCompatActivity() {
     lateinit var etCabang: EditText
     lateinit var btSimpan: Button
 
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -33,14 +32,14 @@ class TambahanPelangganActivity : AppCompatActivity() {
         btSimpan.setOnClickListener{
             cekValidasi()
         }
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.tambah_pelanggan)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
     }
 
-    fun init() {
+    fun init(){
         tvJudul = findViewById(R.id.tvJudulTambahPelanggan)
         etNama = findViewById(R.id.etNamaTambahPelanggan)
         etAlamat = findViewById(R.id.etAlamatTambahPelanggan)
@@ -69,13 +68,13 @@ class TambahanPelangganActivity : AppCompatActivity() {
         }
         if (noHp.isEmpty()) {
             etNoHP.error = this.getString(R.string.validasi_nohp_pelanggan)
-            Toast.makeText(this, this.getString(R.string.validasi_alamat_pelanggan),Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, this.getString(R.string.validasi_nohp_pelanggan),Toast.LENGTH_SHORT).show()
             etNoHP.requestFocus()
             return
         }
         if (cabang.isEmpty()) {
             etCabang.error = this.getString(R.string.validasi_cabang_pelanggan)
-            Toast.makeText(this, this.getString(R.string.validasi_alamat_pelanggan),Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, this.getString(R.string.validasi_cabang_pelanggan),Toast.LENGTH_SHORT).show()
             etCabang.requestFocus()
             return
         }
@@ -90,7 +89,7 @@ class TambahanPelangganActivity : AppCompatActivity() {
             etNama.text.toString(),
             etAlamat.text.toString(),
             etNoHP.text.toString(),
-            etCabang.text.toString(),
+            etCabang.text.toString()
         )
         pelangganBaru.setValue(data)
             .addOnSuccessListener {
@@ -98,7 +97,7 @@ class TambahanPelangganActivity : AppCompatActivity() {
                     this,
                     this.getString(R.string.sukses_simpan_pelanggan),
                     Toast.LENGTH_SHORT
-                )
+                ).show()
                 finish()
             }
             .addOnFailureListener {
@@ -106,7 +105,7 @@ class TambahanPelangganActivity : AppCompatActivity() {
                     this,
                     this.getString(R.string.gagal_simpan_pelanggan),
                     Toast.LENGTH_SHORT
-                )
+                ).show()
             }
     }
 }

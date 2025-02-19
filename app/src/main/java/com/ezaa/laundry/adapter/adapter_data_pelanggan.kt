@@ -3,6 +3,7 @@ package com.ezaa.laundry.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.ezaa.laundry.R
@@ -24,8 +25,17 @@ class adapter_data_pelanggan(
         holder.tvCARD_PELANGGAN_ALAMAT.text = pelanggan.alamatPelanggan
         holder.tvCARD_PELANGGAN_NOHP.text = pelanggan.noHPPelanggan
         holder.tvCARD_PELANGGAN_CABANG.text = pelanggan.idCabang
+
         holder.cvCARD_PELANGGAN.setOnClickListener {
+
         }
+        holder.btnhubungi.setOnClickListener {
+
+        }
+        holder.btnlihat.setOnClickListener {
+
+        }
+
     }
 
     override fun getItemCount(): Int {
@@ -38,6 +48,8 @@ class adapter_data_pelanggan(
         val tvCARD_PELANGGAN_NAMA: TextView = itemView.findViewById(R.id.tvCardNamaPelanggan)
         val tvCARD_PELANGGAN_ALAMAT: TextView = itemView.findViewById(R.id.tvCardPelangganAlamat)
         val tvCARD_PELANGGAN_NOHP: TextView = itemView.findViewById(R.id.tvCardPelangganNoHp)
-        val tvCARD_PELANGGAN_CABANG: TextView = itemView.findViewById(R.id.tvCabangTambahPelanggan)
+        val tvCARD_PELANGGAN_CABANG: TextView = itemView.findViewById(R.id.tvCARD_PELANGGAN_CABANG)
+        val btnhubungi = itemView.findViewById<Button>(R.id.btnCardPelangganHubungi1)
+        val btnlihat: Button = itemView.findViewById(R.id.btnCardPelangganLihat1)
     }
 }

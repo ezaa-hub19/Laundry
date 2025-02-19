@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:background="#bdbebd"
     android:padding="16dp"
-    tools:context="com.android.ezaa.MainActivity">
+    tools:context="com.ezaa.laundry.MainActivity">
 
     <TextView
         android:id="@+id/greeting_text"
