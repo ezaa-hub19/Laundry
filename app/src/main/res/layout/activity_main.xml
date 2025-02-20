@@ -45,6 +45,7 @@
         app:layout_constraintTop_toBottomOf="@+id/date_text"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         app:layout_constraintEnd_toEndOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -120,7 +121,10 @@
                         android:id="@+id/Pelanggan"
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        android:src="@drawable/service" />
+                        android:src="@drawable/service"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:contentDescription="Lihat Data Pelanggan"/>
 
                     <TextView
                         android:layout_width="wrap_content"

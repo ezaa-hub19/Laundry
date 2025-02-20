@@ -1,8 +1,8 @@
 package com.ezaa.laundry
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -11,56 +11,69 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.ezaa.laundry.R
 import com.ezaa.laundry.pegawai.DataPegawaiActivity
 import com.ezaa.laundry.pelanggan.DataPelangganActivity
+import java.text.SimpleDateFormat
 import java.time.LocalDate
 import java.time.LocalTime
 import java.time.format.DateTimeFormatter
+import java.util.Calendar
+import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
+    lateinit var Pelanggan: ImageView
+    lateinit var Pegawai: CardView
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-
+        init()
+        tekan()
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+    }
 
-        val tvDate = findViewById<TextView>(R.id.date_text)
-        tvDate.text = getCurrentDate()
+    fun init() {
+        Pelanggan = findViewById(R.id.Pelanggan)
+        Pegawai = findViewById(R.id.Pegawai)
 
-        val tvGreeting = findViewById<TextView>(R.id.greeting_text)
-        tvGreeting.text = getGreetingMessage()
+    }
 
-        val pelangganMenu = findViewById<ImageView>(R.id.Pelanggan)
-        pelangganMenu.setOnClickListener {
+    fun tekan() {
+        Pelanggan.setOnClickListener {
             val intent = Intent(this, DataPelangganActivity::class.java)
             startActivity(intent)
         }
 
-        val pegawaiMenu = findViewById<CardView>(R.id.Pegawai)
-        pegawaiMenu.setOnClickListener {
+        Pegawai.setOnClickListener {
             val intent = Intent(this, DataPegawaiActivity::class.java)
             startActivity(intent)
         }
-    }
 
-    private fun getGreetingMessage(): String {
-        val currentTime = LocalTime.now()
-        return when {
-            currentTime.hour in 5..10 -> "Selamat Pagi, Reza"
-            currentTime.hour in 11..14 -> "Selamat Siang, Reza"
-            currentTime.hour in 15..18 -> "Selamat Sore, Reza"
+        // Referensi TextView
+        val helloTextView = findViewById<View>(R.id.greeting_text) as TextView
+        val dateTextView = findViewById<View>(R.id.date_text) as TextView
+
+        // Mengatur tanggal hari ini
+        val calendar = Calendar.getInstance()
+        val dateFormat = SimpleDateFormat("dd MMMM yyyy", Locale.getDefault())
+        val currentDate = dateFormat.format(calendar.time)
+        dateTextView.text = currentDate
+
+        // Mengatur pesan berdasarkan waktu
+        val hour = calendar.get(Calendar.HOUR_OF_DAY)
+        val greeting = when {
+            hour in 5..11 -> "Selamat Pagi, Reza"
+            hour in 12..14 -> "Selamat Siang, Reza"
+            hour in 15..17 -> "Selamat Sore, Reza"
             else -> "Selamat Malam, Reza"
         }
-    }
-
-    private fun getCurrentDate(): String {
-        val currentDate = LocalDate.now()
-        val formatter = DateTimeFormatter.ofPattern("dd MMMM yyyy")
-        return currentDate.format(formatter)
+        helloTextView.text = greeting
     }
 }

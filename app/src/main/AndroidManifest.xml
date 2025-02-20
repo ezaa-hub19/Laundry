@@ -18,13 +18,13 @@
             android:name="com.ezaa.laundry.pegawai.TambahPegawaiActivity"
             android:exported="false"/>
         <activity
-            android:name=".pegawai.DataPegawaiActivity"
+            android:name="com.ezaa.laundry.pegawai.DataPegawaiActivity"
             android:exported="false"/>
         <activity
-            android:name=".pelanggan.TambahanPelangganActivity"
+            android:name="com.ezaa.laundry.pelanggan.TambahanPelangganActivity"
             android:exported="false"/>
         <activity
-            android:name=".pelanggan.DataPelangganActivity"
+            android:name="com.ezaa.laundry.pelanggan.DataPelangganActivity"
             android:exported="false"/>
         <activity
             android:name="com.ezaa.laundry.MainActivity"

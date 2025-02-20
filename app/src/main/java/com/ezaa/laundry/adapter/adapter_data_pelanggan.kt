@@ -4,15 +4,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.ezaa.laundry.R
+import android.widget.TextView
 import com.ezaa.laundry.modeldata.modelpelanggan
 
 class adapter_data_pelanggan(
     private val listPelanggan: ArrayList<modelpelanggan>) :
     RecyclerView.Adapter<adapter_data_pelanggan.ViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+    override  fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): ViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.card_data_pelanggan, parent, false)
         return ViewHolder(view)
@@ -20,22 +23,21 @@ class adapter_data_pelanggan(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val pelanggan = listPelanggan[position]
+
         holder.tvCARD_PELANGGAN_ID.text = pelanggan.idPelanggan
         holder.tvCARD_PELANGGAN_NAMA.text = pelanggan.namaPelanggan
         holder.tvCARD_PELANGGAN_ALAMAT.text = pelanggan.alamatPelanggan
         holder.tvCARD_PELANGGAN_NOHP.text = pelanggan.noHPPelanggan
         holder.tvCARD_PELANGGAN_CABANG.text = pelanggan.idCabang
-
-        holder.cvCARD_PELANGGAN.setOnClickListener {
-
-        }
-        holder.btnhubungi.setOnClickListener {
+        holder.cardPelanggan.setOnClickListener {
 
         }
-        holder.btnlihat.setOnClickListener {
+        holder.lihat.setOnClickListener {
 
         }
+        holder.hubungi.setOnClickListener{
 
+        }
     }
 
     override fun getItemCount(): Int {
@@ -43,13 +45,13 @@ class adapter_data_pelanggan(
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val cvCARD_PELANGGAN = itemView.findViewById<View>(R.id.cvPelanggan)
-        val tvCARD_PELANGGAN_ID: TextView = itemView.findViewById(R.id.tvCardPelangganID)
-        val tvCARD_PELANGGAN_NAMA: TextView = itemView.findViewById(R.id.tvCardNamaPelanggan)
-        val tvCARD_PELANGGAN_ALAMAT: TextView = itemView.findViewById(R.id.tvCardPelangganAlamat)
-        val tvCARD_PELANGGAN_NOHP: TextView = itemView.findViewById(R.id.tvCardPelangganNoHp)
-        val tvCARD_PELANGGAN_CABANG: TextView = itemView.findViewById(R.id.tvCARD_PELANGGAN_CABANG)
-        val btnhubungi = itemView.findViewById<Button>(R.id.btnCardPelangganHubungi1)
-        val btnlihat: Button = itemView.findViewById(R.id.btnCardPelangganLihat1)
+        val cardPelanggan = itemView.findViewById<View>(R.id.card_data_pelanggan)
+        val tvCARD_PELANGGAN_ID = itemView.findViewById<TextView>(R.id.tvCardPelangganID)
+        val tvCARD_PELANGGAN_NAMA = itemView.findViewById<TextView>(R.id.tvCardNamaPelanggan)
+        val tvCARD_PELANGGAN_ALAMAT = itemView.findViewById<TextView>(R.id.tvCardPelangganAlamat)
+        val tvCARD_PELANGGAN_NOHP = itemView.findViewById<TextView>(R.id.tvCardPelangganNoHp)
+        val tvCARD_PELANGGAN_CABANG = itemView.findViewById<TextView>(R.id.tvCARD_PELANGGAN_CABANG)
+        val lihat = itemView.findViewById<Button>(R.id.btnCardPelangganLihat1)
+        val hubungi = itemView.findViewById<Button>(R.id.btnCardPelangganHubungi1)
     }
 }

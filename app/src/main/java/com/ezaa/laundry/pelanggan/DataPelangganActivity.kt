@@ -19,7 +19,6 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
 class DataPelangganActivity : AppCompatActivity() {
-
     val database = FirebaseDatabase.getInstance()
     val myRef = database.getReference("pelanggan")
     lateinit var rvDATA_PELANGGAN: RecyclerView
@@ -27,12 +26,10 @@ class DataPelangganActivity : AppCompatActivity() {
     lateinit var pelangganList: ArrayList<modelpelanggan>
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_data_pelanggan)
         init()
-
         val layoutManager = LinearLayoutManager(this)
         layoutManager.reverseLayout = true
         layoutManager.stackFromEnd = true
@@ -43,10 +40,15 @@ class DataPelangganActivity : AppCompatActivity() {
         getData()
         tekan()
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.data_pelanggan)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+
+        fabDATA_PENGGUNA_Tambah.setOnClickListener {
+            val intent = Intent(this, TambahanPelangganActivity::class.java)
+            startActivity(intent)
         }
     }
 
@@ -62,8 +64,8 @@ class DataPelangganActivity : AppCompatActivity() {
                 if (snapshot.exists()) {
                     pelangganList.clear()
                     for (dataSnapshot in snapshot.children) {
-                        val pegawai= dataSnapshot.getValue(modelpelanggan::class.java)
-                        pelangganList.add(pegawai!!)
+                        val pelanggan = dataSnapshot.getValue(modelpelanggan::class.java)
+                        pelangganList.add(pelanggan!!)
                     }
                         val adapter = adapter_data_pelanggan(pelangganList)
                         rvDATA_PELANGGAN.adapter = adapter
@@ -76,10 +78,8 @@ class DataPelangganActivity : AppCompatActivity() {
             }
         })
     }
-    fun tekan(){
+    fun tekan() {
         fabDATA_PENGGUNA_Tambah.setOnClickListener {
-            val intent =  Intent(this,TambahanPelangganActivity::class.java)
-            startActivity(intent)
         }
     }
 }

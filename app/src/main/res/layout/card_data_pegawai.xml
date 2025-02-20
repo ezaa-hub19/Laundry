@@ -9,7 +9,7 @@
     app:cardCornerRadius="8dp"
     app:cardElevation="4dp"
     android:background="@android:color/white"
-    tools:context=".pegawai.DataPegawaiActivity">
+    tools:context="com.ezaa.laundry.pegawai.DataPegawaiActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
