@@ -15,6 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Tambah Pelanggan"
+        android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -26,6 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="7dp"
         android:text="Nama Lengkap : "
+        android:textColor="@color/black"
         android:textStyle="bold"
         android:textSize="15sp"
         android:layout_marginStart="15dp" />
@@ -38,6 +40,8 @@
         android:layout_marginStart="12dp"
         android:layout_marginEnd="9dp"
         android:hint="Nama Lengkap"
+        android:textColorHint="@color/black"
+        android:inputType="textPersonName"
         android:layout_marginTop="5dp"
         android:padding="10dp"
         android:background="@android:drawable/edit_text" />
@@ -48,6 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="Alamat : "
+        android:textColor="@color/black"
         android:textStyle="bold"
         android:textSize="15sp"
         android:layout_marginStart="15dp" />
@@ -60,6 +65,8 @@
         android:layout_marginStart="12dp"
         android:layout_marginEnd="9dp"
         android:hint="Alamat"
+        android:textColorHint="@color/black"
+        android:inputType="textPostalAddress"
         android:padding="10dp"
         android:layout_marginTop="5dp"
         android:background="@android:drawable/edit_text" />
@@ -70,6 +77,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="No.HP Aktif : "
+        android:textColor="@color/black"
         android:textStyle="bold"
         android:textSize="15sp"
         android:layout_marginStart="15dp" />
@@ -82,9 +90,11 @@
         android:layout_marginStart="12dp"
         android:layout_marginEnd="9dp"
         android:hint="No HP Aktif"
+        android:textColorHint="@color/black"
         android:padding="10dp"
         android:layout_marginTop="5dp"
         android:inputType="phone"
+        android:maxLines="14"
         android:background="@android:drawable/edit_text" />
 
     <TextView
@@ -94,6 +104,7 @@
         android:layout_marginTop="10dp"
         android:text="Cabang : "
         android:textStyle="bold"
+        android:textColor="@color/black"
         android:textSize="15sp"
         android:layout_marginStart="15dp" />
 
@@ -105,6 +116,7 @@
         android:layout_marginStart="12dp"
         android:layout_marginEnd="9dp"
         android:hint="Cabang"
+        android:textColorHint="@color/black"
         android:padding="10dp"
         android:layout_marginTop="5dp"
         android:background="@android:drawable/edit_text" />
