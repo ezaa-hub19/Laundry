@@ -94,7 +94,7 @@
         android:padding="10dp"
         android:layout_marginTop="5dp"
         android:inputType="phone"
-        android:maxLines="14"
+        android:maxLength="14"
         android:background="@android:drawable/edit_text" />
 
     <TextView

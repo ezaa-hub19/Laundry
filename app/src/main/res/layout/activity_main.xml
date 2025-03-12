@@ -209,7 +209,7 @@
                 android:layout_height="100dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="11dp"
                 android:backgroundTint="@color/white">
 
                 <LinearLayout
@@ -238,7 +238,7 @@
                 android:layout_height="100dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp"
-                android:layout_marginStart="-250dp"
+                android:layout_marginStart="-249dp"
                 android:backgroundTint="@color/white">
 
                 <LinearLayout
@@ -267,7 +267,7 @@
                 android:layout_height="100dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp"
-                android:layout_marginStart="12dp"
+                android:layout_marginStart="11dp"
                 android:backgroundTint="@color/white">
 
                 <LinearLayout
@@ -299,7 +299,7 @@
                 android:layout_height="100dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="11dp"
                 android:backgroundTint="@color/white">
 
                 <LinearLayout
@@ -328,7 +328,7 @@
                 android:layout_height="100dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp"
-                android:layout_marginStart="-250dp"
+                android:layout_marginStart="-249dp"
                 android:backgroundTint="@color/white">
 
                 <LinearLayout
@@ -357,7 +357,7 @@
                 android:layout_height="100dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp"
-                android:layout_marginStart="12dp"
+                android:layout_marginStart="11dp"
                 android:backgroundTint="@color/white">
 
                 <LinearLayout

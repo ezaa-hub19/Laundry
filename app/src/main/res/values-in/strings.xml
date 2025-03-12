@@ -22,8 +22,8 @@
     <string name="validasi_alamat_pelanggan">Alamat pelanggan tidak boleh kosong</string>
     <string name="validasi_no_hp_pelanggan">No HP pelanggan tidak boleh kosong</string>
     <string name="validasi_cabang_pelanggan">Cabang pelanggan tidak boleh kosong</string>
-    <string name="sukses_simpan_pelanggan">sukses_simpan_pelanggan</string>
-    <string name="gagal_simpan_pelanggan">gagal_simpan_pelanggan</string>
+    <string name="sukses_simpan_pelanggan">Berhasil Menyimpan Pelanggan</string>
+    <string name="gagal_simpan_pelanggan">Gagal Menyimpan Pelanggan</string>
     <string name="validasi_nohp_pelanggan">validasi_nohp_pelanggan</string>
     <string name="cabang">Cabang</string>
 </resources>

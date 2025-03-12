@@ -22,8 +22,8 @@
     <string name="validasi_alamat_pelanggan">The customer address cannot be empty</string>
     <string name="validasi_no_hp_pelanggan">The customer\'s cellphone number cannot be empty</string>
     <string name="validasi_cabang_pelanggan">Customer branches cannot be empty</string>
-    <string name="sukses_simpan_pelanggan">customer_save_success</string>
-    <string name="gagal_simpan_pelanggan">failed to save customer</string>
+    <string name="sukses_simpan_pelanggan">Successfully Save Customers</string>
+    <string name="gagal_simpan_pelanggan">Failed Save Customers</string>
     <string name="validasi_nohp_pelanggan">validate_customer_phone_number</string>
     <string name="cabang">Branch</string>
 </resources>
