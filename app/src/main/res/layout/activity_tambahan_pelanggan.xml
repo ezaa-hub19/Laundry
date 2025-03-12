@@ -28,13 +28,15 @@
         android:text="Nama Lengkap : "
         android:textStyle="bold"
         android:textSize="15sp"
-        android:layout_marginStart="7dp" />
+        android:layout_marginStart="15dp" />
 
     <!-- Full Name Input -->
     <EditText
         android:id="@+id/etNamaTambahPelanggan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="9dp"
         android:hint="Nama Lengkap"
         android:layout_marginTop="5dp"
         android:padding="10dp"
@@ -48,13 +50,15 @@
         android:text="Alamat : "
         android:textStyle="bold"
         android:textSize="15sp"
-        android:layout_marginStart="7dp" />
+        android:layout_marginStart="15dp" />
 
     <!-- Address Input -->
     <EditText
         android:id="@+id/etAlamatTambahPelanggan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="9dp"
         android:hint="Alamat"
         android:padding="10dp"
         android:layout_marginTop="5dp"
@@ -68,13 +72,15 @@
         android:text="No.HP Aktif : "
         android:textStyle="bold"
         android:textSize="15sp"
-        android:layout_marginStart="7dp" />
+        android:layout_marginStart="15dp" />
 
     <!-- Phone Number Input -->
     <EditText
         android:id="@+id/etNoHpTambahPelanggan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="9dp"
         android:hint="No HP Aktif"
         android:padding="10dp"
         android:layout_marginTop="5dp"
@@ -89,13 +95,15 @@
         android:text="Cabang : "
         android:textStyle="bold"
         android:textSize="15sp"
-        android:layout_marginStart="7dp" />
+        android:layout_marginStart="15dp" />
 
     <!-- Phone Number Input -->
     <EditText
         android:id="@+id/etCabangTambahPelanggan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="9dp"
         android:hint="Cabang"
         android:padding="10dp"
         android:layout_marginTop="5dp"
@@ -106,6 +114,8 @@
         android:id="@+id/btSimpanTambahPelanggan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:text="Simpan"
         android:layout_marginTop="20dp"
         android:backgroundTint="#777777"
