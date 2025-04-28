@@ -21,7 +21,7 @@
         android:paddingBottom="16dp" />
 
     <TextView
-        android:id="@+id/tvNamaLengkap"
+        android:id="@+id/tvNamaLengkapPegawai"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="7dp"
@@ -32,7 +32,7 @@
 
     <!-- Full Name Input -->
     <EditText
-        android:id="@+id/etNamaLengkap"
+        android:id="@+id/etNamaLengkapPegawai"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Nama Lengkap"
@@ -41,7 +41,7 @@
         android:background="@android:drawable/edit_text" />
 
     <TextView
-        android:id="@+id/tvAlamat"
+        android:id="@+id/tvAlamatPegawai"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -52,7 +52,7 @@
 
     <!-- Address Input -->
     <EditText
-        android:id="@+id/etAlamat"
+        android:id="@+id/etAlamatPegawai"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Alamat"
@@ -61,7 +61,7 @@
         android:background="@android:drawable/edit_text" />
 
     <TextView
-        android:id="@+id/tvNoHP"
+        android:id="@+id/tvNoHPPegawai"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -72,7 +72,7 @@
 
     <!-- Phone Number Input -->
     <EditText
-        android:id="@+id/etNoHP"
+        android:id="@+id/etNoHPPegawai"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="No HP Aktif"
@@ -82,7 +82,7 @@
         android:background="@android:drawable/edit_text" />
 
     <TextView
-        android:id="@+id/tvCabang"
+        android:id="@+id/tvCabangPegawai"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -93,7 +93,7 @@
 
     <!-- Phone Number Input -->
     <EditText
-        android:id="@+id/etCabang"
+        android:id="@+id/etCabangPegawai"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Cabang"
@@ -104,7 +104,7 @@
 
     <!-- Submit Button -->
     <Button
-        android:id="@+id/btSimpan"
+        android:id="@+id/btSimpanPegawai"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Simpan"

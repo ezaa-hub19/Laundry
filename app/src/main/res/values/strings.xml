@@ -25,4 +25,10 @@
     <string name="gagal_simpan_pelanggan">Gagal Menyimpan Pelanggan</string>
     <string name="validasi_nohp_pelanggan">validasi_nohp_pelanggan</string>
     <string name="cabang">Cabang</string>
+    <string name="validasi_nama_pegawai">Nama pegawai tidak boleh kosong</string>
+    <string name="validasi_alamat_pegawai">Alamat pegawai tidak boleh kosong</string>
+    <string name="validasi_no_hp_pegawai">No HP pegawai tidak boleh kosong</string>
+    <string name="validasi_cabang_pegawai">Cabang pegawai tidak boleh kosong</string>
+    <string name="sukses_simpan_pegawai">Sukses Menyimpan Pegawai</string>
+    <string name="gagal_simpan_pegawai">Gagal Menyimpan Pegawai</string>
 </resources>

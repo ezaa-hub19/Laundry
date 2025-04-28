@@ -26,4 +26,10 @@
     <string name="gagal_simpan_pelanggan">Failed Save Customers</string>
     <string name="validasi_nohp_pelanggan">validate_customer_phone_number</string>
     <string name="cabang">Branch</string>
+    <string name="validasi_nama_pegawai">The employee\'s name cannot be empty</string>
+    <string name="validasi_alamat_pegawai">The employee\'s address cannot be empty</string>
+    <string name="validasi_no_hp_pegawai">The employee\'s phone number cannot be empty</string>
+    <string name="validasi_cabang_pegawai">The employee branch cannot be empty</string>
+    <string name="sukses_simpan_pegawai">Successfully Save Employee</string>
+    <string name="gagal_simpan_pegawai">Failed Save Employee</string>
 </resources>

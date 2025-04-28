@@ -17,7 +17,7 @@
         android:orientation="vertical">
 
     <TextView
-        android:id="@+id/tvCardPelangganID"
+        android:id="@+id/tvCardPegawaiID"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="#58097c"
@@ -90,7 +90,7 @@
             android:gravity="center">
 
             <Button
-                android:id="@+id/btnCardPelangganHubungi"
+                android:id="@+id/btnCardPegawaiHubungi"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -100,7 +100,7 @@
                 android:layout_marginEnd="8dp" />
 
             <Button
-                android:id="@+id/btnCardPelangganLihat"
+                android:id="@+id/btnCardPegawaiLihat"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

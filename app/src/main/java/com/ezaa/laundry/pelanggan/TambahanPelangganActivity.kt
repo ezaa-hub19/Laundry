@@ -69,13 +69,13 @@ class TambahanPelangganActivity : AppCompatActivity() {
         }
         if (noHp.isEmpty()) {
             etNoHP.error = this.getString(R.string.validasi_no_hp_pelanggan)
-            Toast.makeText(this, this.getString(R.string.validasi_alamat_pelanggan),Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, this.getString(R.string.validasi_no_hp_pelanggan),Toast.LENGTH_SHORT).show()
             etNoHP.requestFocus()
             return
         }
         if (cabang.isEmpty()) {
             etCabang.error = this.getString(R.string.validasi_cabang_pelanggan)
-            Toast.makeText(this, this.getString(R.string.validasi_alamat_pelanggan),Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, this.getString(R.string.validasi_cabang_pelanggan),Toast.LENGTH_SHORT).show()
             etCabang.requestFocus()
             return
         }
