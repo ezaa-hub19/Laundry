@@ -1,10 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".layanan.TambahLayananActivity">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tambah_layanan"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@android:color/white"
+    tools:context="com.ezaa.laundry.layanan.TambahLayananActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Title -->
+    <TextView
+        android:id="@+id/tvTambahLayanan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tambah Layanan"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:paddingBottom="16dp" />
+
+    <TextView
+        android:id="@+id/tvNamaLayanan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:text="Nama Layanan : "
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:layout_marginStart="7dp" />
+
+    <!-- Full Name Input -->
+    <EditText
+        android:id="@+id/etNamaLayanan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nama Layanan"
+        android:layout_marginTop="5dp"
+        android:padding="10dp"
+        android:background="@android:drawable/edit_text" />
+
+    <TextView
+        android:id="@+id/tvHargaLayanan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Harga : "
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:layout_marginStart="7dp" />
+
+    <!-- Phone Number Input -->
+    <EditText
+        android:id="@+id/etHargaLayanan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Harga"
+        android:padding="10dp"
+        android:layout_marginTop="5dp"
+        android:inputType="phone"
+        android:background="@android:drawable/edit_text" />
+
+    <TextView
+        android:id="@+id/tvCabangLayanan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Cabang :"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:layout_marginStart="7dp" />
+
+    <!-- Phone Number Input -->
+    <EditText
+        android:id="@+id/etCabangLayanan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Cabang"
+        android:padding="10dp"
+        android:layout_marginTop="5dp"
+        android:inputType="phone"
+        android:background="@android:drawable/edit_text" />
+
+    <!-- Submit Button -->
+    <Button
+        android:id="@+id/btSimpanLayanan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Simpan"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#777777"
+        android:textColor="@android:color/white"/>
+
+</LinearLayout>
