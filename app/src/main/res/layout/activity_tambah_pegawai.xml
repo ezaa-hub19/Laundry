@@ -99,7 +99,6 @@
         android:hint="Cabang"
         android:padding="10dp"
         android:layout_marginTop="5dp"
-        android:inputType="phone"
         android:background="@android:drawable/edit_text" />
 
     <!-- Submit Button -->
