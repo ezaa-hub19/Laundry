@@ -85,10 +85,10 @@ class DataTransaksiActivity : AppCompatActivity() {
         btnProses.text = getString(R.string.Proses)
 
         // Set initial text for TextViews
-        tvNamaPelanggan.text = "Nama Pelanggan"
-        tvNoHp.text = "No HP"
-        tvNamaLayanan.text = "Nama Layanan"
-        tvHargaLayanan.text = "Harga"
+        tvNamaPelanggan.text = getString(R.string.nama_pelanggan, getString(R.string.belum_dipilih))
+        tvNoHp.text = getString(R.string.no_hp, getString(R.string.kosong))
+        tvNamaLayanan.text = getString(R.string.nama_layanan, getString(R.string.belum_dipilih))
+        tvHargaLayanan.text = getString(R.string.harga_layanan, getString(R.string.kosong))
     }
 
     private fun setupRecyclerView() {
@@ -164,8 +164,8 @@ class DataTransaksiActivity : AppCompatActivity() {
                     namaPelanggan = data.getStringExtra("nama").orEmpty()
                     noHP = data.getStringExtra("noHP").orEmpty()
 
-                    tvNamaPelanggan.text = "Nama Pelanggan"
-                    tvNoHp.text = "No HP"
+                    tvNamaPelanggan.text = getString(R.string.nama_pelanggan, namaPelanggan)
+                    tvNoHp.text = getString(R.string.no_hp, noHP)
                 }
 
                 pilihLayanan -> {
@@ -173,8 +173,8 @@ class DataTransaksiActivity : AppCompatActivity() {
                     namaLayanan = data.getStringExtra("nama").orEmpty()
                     hargaLayanan = data.getStringExtra("harga").orEmpty()
 
-                    tvNamaLayanan.text = "Nama Layanan"
-                    tvHargaLayanan.text = "Harga Layanan"
+                    tvNamaLayanan.text = getString(R.string.nama_layanan, namaLayanan)
+                    tvHargaLayanan.text = getString(R.string.harga_layanan, hargaLayanan)
                 }
 
                 pilihLayananTambahan -> {

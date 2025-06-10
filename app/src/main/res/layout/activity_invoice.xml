@@ -24,7 +24,7 @@
         android:id="@+id/tv_branch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Gilingan"
+        android:text="Solo"
         android:textSize="16sp"
         android:layout_marginTop="4dp"
         app:layout_constraintTop_toBottomOf="@id/tv_business_name"

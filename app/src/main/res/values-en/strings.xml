@@ -132,4 +132,8 @@
     <string name="pilih_layanan_utama_dulu">Select the main service first</string>
     <string name="harga_layanan_tidak_valid">The main service price is invalid</string>
     <string name="KonfirmasiDataTransaksi">Confirm Transaction Data</string>
+    <string name="nama_pelanggan">Customer Name : %1$s</string>
+    <string name="no_hp">Phone number : %1$s</string>
+    <string name="nama_layanan">Service Name : %1$s</string>
+    <string name="harga_layanan">Price : %1$s</string>
 </resources>
