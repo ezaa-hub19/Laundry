@@ -1,113 +1,238 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/card_data_pelanggan"
-    android:layout_margin="8dp"
-    app:cardCornerRadius="8dp"
-    app:cardElevation="4dp"
-    android:background="@android:color/white"
-    tools:context="com.ezaa.laundry.pelanggan.DataPelangganActivity">
+    card_view:cardCornerRadius="8dp"
+    card_view:cardElevation="4dp"
+    android:id="@+id/cvCARD_PELANGGAN"
+    android:layout_marginTop="10dp"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tvCardPelangganID"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="#008000"
-            android:gravity="center_vertical"
-            android:paddingStart="15dp"
-            android:paddingEnd="15dp"
-            android:text="@string/card_pelanggan_id"
-            android:textColor="#FFFFFF"
-            android:textSize="16sp"
-            tools:ignore="TextContrastCheck" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
-
-        <TextView
-            android:id="@+id/tvCardNamaPelanggan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/card_pelanggan_nama"
-            android:textSize="19sp"
-            android:textStyle="bold"
-            android:textColor="@android:color/black"
-            android:layout_marginBottom="4dp" />
-
-        <TextView
-            android:id="@+id/tvCardPelangganAlamat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/card_pelanggan_alamat"
-            android:textSize="14sp"
-            android:textColor="@android:color/black"
-            android:layout_marginBottom="4dp" />
-
-        <TextView
-            android:id="@+id/tvCardPelangganNoHp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/card_pelanggan_no_hp"
-            android:textSize="14sp"
-            android:textColor="@android:color/black"
-            android:layout_marginBottom="16dp" />
-
-        <TextView
-            android:id="@+id/tvCARD_PELANGGAN_CABANG"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/cabang"
-            android:textSize="14sp"
-            android:textColor="@android:color/black"
-            android:layout_marginBottom="12dp"
-            android:layout_marginTop="-13dp"/>
-
-<!--       / <TextView-->
-<!--            android:id="@+id/tvCardPelangganTerdaftar"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="@string/card_pelanggan_terdaftar"-->
-<!--            android:textSize="14sp"-->
-<!--            android:textColor="@android:color/black"-->
-<!--            android:layout_marginBottom="12dp"-->
-<!--            android:layout_marginTop="-13dp"/>-->
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="center">
+            android:background="#008000"
+            android:layout_marginBottom="4dp">
 
-            <Button
-                android:id="@+id/btnCardPelangganHubungi1"
+            <TextView
+                android:id="@+id/tvCARD_PELANGGAN_ID"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/card_pelanggan_hubungi"
-                android:backgroundTint="#4fb141"
-                android:textColor="@android:color/white"
-                android:layout_marginEnd="8dp" />
-
-            <Button
-                android:id="@+id/btnCardPelangganLihat1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/card_pelanggan_lihat"
-                android:backgroundTint="@android:color/holo_orange_light"
-                android:textColor="@android:color/white" />
+                android:layout_height="40dp"
+                android:layout_weight="0.5"
+                android:gravity="center_vertical"
+                android:paddingStart="15dp"
+                android:text="@string/card_pelanggan_id"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                tools:ignore="TextContrastCheck" />
         </LinearLayout>
-    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="4dp">
+
+                <!-- TextView Label -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/card_pelanggan_nama"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:layout_marginStart="2dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- TextView Nilai -->
+                <TextView
+                    android:id="@+id/tvCARD_PELANGGAN_nama"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="8dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="4dp">
+
+                <!-- TextView Label -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/card_pelanggan_alamat"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="2dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:layout_marginStart="2dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- TextView Nilai -->
+                <TextView
+                    android:id="@+id/tvCARD_PELANGGAN_alamat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textSize="14sp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="2dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="4dp">
+
+                <!-- TextView Label -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/card_pelanggan_no_hp"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="2dp"/>
+
+                <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:layout_marginStart="2dp"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+                <!-- TextView Nilai -->
+                <TextView
+                    android:id="@+id/tvCARD_PELANGGAN_nohp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textSize="14sp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="2dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="1dp">
+
+                <!-- TextView Label -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cabang"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:layout_marginStart="2dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- TextView Nilai -->
+                <TextView
+                    android:id="@+id/tvCARD_PELANGGAN_cabang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textSize="14sp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="8dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="4dp">
+
+                <!-- TextView Label -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/card_pelanggan_terdaftar"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:layout_marginStart="2dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- TextView Nilai -->
+                <TextView
+                    android:id="@+id/tvCARD_PELANGGAN_terdaftar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textSize="14sp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="8dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btn_hubungi_pelanggan"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/card_pelanggan_hubungi"
+                    android:backgroundTint="#27ad00"
+                    android:textColor="@android:color/white"
+                    android:layout_marginEnd="8dp"/>
+
+                <Button
+                    android:id="@+id/btn_lihat_pelanggan"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/card_pelanggan_lihat"
+                    android:backgroundTint="#71ff47"
+                    android:textColor="@android:color/white"/>
+
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

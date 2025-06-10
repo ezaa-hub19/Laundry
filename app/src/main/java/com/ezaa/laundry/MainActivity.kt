@@ -12,8 +12,12 @@ import androidx.cardview.widget.CardView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.ezaa.laundry.R
+import com.ezaa.laundry.cabang.DataCabangActivity
+import com.ezaa.laundry.layanan.DataLayananActivity
 import com.ezaa.laundry.pegawai.DataPegawaiActivity
 import com.ezaa.laundry.pelanggan.DataPelangganActivity
+import com.ezaa.laundry.tambahan.DataTambahanActivity
+import com.ezaa.laundry.transaksi.DataTransaksiActivity
 import java.text.SimpleDateFormat
 import java.time.LocalDate
 import java.time.LocalTime
@@ -24,7 +28,10 @@ import java.util.Locale
 class MainActivity : AppCompatActivity() {
     lateinit var Pelanggan: ImageView
     lateinit var Pegawai: CardView
-
+    lateinit var Layanan: CardView
+    lateinit var Cabang: CardView
+    lateinit var Tambahan: CardView
+    lateinit var Transaksi: LinearLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,7 +49,10 @@ class MainActivity : AppCompatActivity() {
     fun init() {
         Pelanggan = findViewById(R.id.Pelanggan)
         Pegawai = findViewById(R.id.Pegawai)
-
+        Layanan = findViewById(R.id.Layanan)
+        Cabang = findViewById(R.id.Cabang)
+        Tambahan = findViewById(R.id.Tambahan)
+        Transaksi = findViewById(R.id.Transaksi)
     }
 
     fun tekan() {
@@ -53,6 +63,26 @@ class MainActivity : AppCompatActivity() {
 
         Pegawai.setOnClickListener {
             val intent = Intent(this, DataPegawaiActivity::class.java)
+            startActivity(intent)
+        }
+
+        Layanan.setOnClickListener {
+            val intent = Intent(this, DataLayananActivity::class.java)
+            startActivity(intent)
+        }
+
+        Cabang.setOnClickListener {
+            val intent = Intent(this, DataCabangActivity::class.java)
+            startActivity(intent)
+        }
+
+        Tambahan.setOnClickListener {
+            val intent = Intent(this, DataTambahanActivity::class.java)
+            startActivity(intent)
+        }
+
+        Transaksi.setOnClickListener {
+            val intent = Intent(this, DataTransaksiActivity::class.java)
             startActivity(intent)
         }
 

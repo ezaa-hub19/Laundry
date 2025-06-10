@@ -89,6 +89,7 @@
 
                 <!-- Icon 1 -->
                 <LinearLayout
+                    android:id="@+id/Transaksi"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -137,6 +138,7 @@
 
                 <!-- Icon 3 -->
                 <LinearLayout
+                    android:id="@+id/Laporan"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -205,6 +207,7 @@
 
             <!-- Card 1 -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/Akun"
                 android:layout_width="110dp"
                 android:layout_height="100dp"
                 app:cardCornerRadius="16dp"
@@ -234,6 +237,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/Layanan"
                 android:layout_width="110dp"
                 android:layout_height="100dp"
                 app:cardCornerRadius="16dp"
@@ -263,6 +267,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/Tambahan"
                 android:layout_width="110dp"
                 android:layout_height="100dp"
                 app:cardCornerRadius="16dp"
@@ -324,6 +329,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/Cabang"
                 android:layout_width="110dp"
                 android:layout_height="100dp"
                 app:cardCornerRadius="16dp"
@@ -353,6 +359,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/Printer"
                 android:layout_width="110dp"
                 android:layout_height="100dp"
                 app:cardCornerRadius="16dp"

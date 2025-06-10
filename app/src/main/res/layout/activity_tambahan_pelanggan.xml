@@ -130,7 +130,7 @@
         android:layout_marginEnd="10dp"
         android:text="Simpan"
         android:layout_marginTop="20dp"
-        android:backgroundTint="#777777"
+        android:backgroundTint="#25ff04"
         android:textColor="@android:color/white"/>
 
 </LinearLayout>

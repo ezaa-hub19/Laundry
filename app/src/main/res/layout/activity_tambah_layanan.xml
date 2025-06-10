@@ -88,7 +88,7 @@
         android:layout_height="wrap_content"
         android:text="Simpan"
         android:layout_marginTop="20dp"
-        android:backgroundTint="#777777"
+        android:backgroundTint="#25ff04"
         android:textColor="@android:color/white"/>
 
 </LinearLayout>

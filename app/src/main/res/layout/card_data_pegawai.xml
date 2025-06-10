@@ -1,113 +1,238 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/cvPegawai"
-    android:layout_margin="8dp"
-    app:cardCornerRadius="8dp"
-    app:cardElevation="4dp"
-    android:background="@android:color/white"
-    tools:context="com.ezaa.laundry.pegawai.DataPegawaiActivity">
+    card_view:cardCornerRadius="8dp"
+    card_view:cardElevation="4dp"
+    android:id="@+id/cvCARD_PEGAWAI"
+    android:layout_marginTop="10dp"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tvCardPegawaiID"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="#58097c"
-        android:gravity="center_vertical"
-        android:paddingStart="15dp"
-        android:paddingEnd="15dp"
-        android:text="@string/card_pegawai_id"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        tools:ignore="TextContrastCheck" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
-
-        <TextView
-            android:id="@+id/tvCardPegawaiNama"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/card_pegawai_nama"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="@android:color/black"
-            android:layout_marginBottom="8dp" />
-
-        <TextView
-            android:id="@+id/tvCardPegawaiAlamat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/card_pegawai_alamat"
-            android:textSize="14sp"
-            android:textColor="@android:color/black"
-            android:layout_marginBottom="4dp" />
-
-        <TextView
-            android:id="@+id/tvCardPegawaiNoHp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/card_pegawai_no_hp"
-            android:textSize="14sp"
-            android:textColor="@android:color/black"
-            android:layout_marginBottom="16dp" />
-
-        <TextView
-            android:id="@+id/tvCardPegawaiTerdaftar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/card_pegawai_terdaftar"
-            android:textSize="14sp"
-            android:textColor="@android:color/black"
-            android:layout_marginBottom="12dp"
-            android:layout_marginTop="-13dp"/>
-
-        <TextView
-            android:id="@+id/tvCardPegawaiCabang"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/card_pegawai_cabang"
-            android:textSize="14sp"
-            android:textColor="@android:color/black"
-            android:layout_marginBottom="12dp"
-            android:layout_marginTop="-8dp"/>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="center">
+            android:background="#58097c"
+            android:layout_marginBottom="4dp">
 
-            <Button
-                android:id="@+id/btnCardPegawaiHubungi"
+            <TextView
+                android:id="@+id/tvCARD_PEGAWAI_ID"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/card_pegawai_hubungi"
-                android:backgroundTint="#58097c"
-                android:textColor="@android:color/white"
-                android:layout_marginEnd="8dp" />
-
-            <Button
-                android:id="@+id/btnCardPegawaiLihat"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/card_pegawai_lihat"
-                android:backgroundTint="#8e5ca3"
-                android:textColor="@android:color/white" />
+                android:layout_height="40dp"
+                android:layout_weight="0.5"
+                android:gravity="center_vertical"
+                android:paddingStart="15dp"
+                android:text="@string/card_pegawai_id"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                tools:ignore="TextContrastCheck" />
         </LinearLayout>
-    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="4dp">
+
+                <!-- TextView Label -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/card_pegawai_nama"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:layout_marginStart="2dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- TextView Nilai -->
+                <TextView
+                    android:id="@+id/tvCARD_PEGAWAI_nama"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="8dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="4dp">
+
+                <!-- TextView Label -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/card_pegawai_alamat"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="2dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:layout_marginStart="2dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- TextView Nilai -->
+                <TextView
+                    android:id="@+id/tvCARD_PEGAWAI_alamat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textSize="14sp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="2dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="4dp">
+
+                <!-- TextView Label -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/card_pegawai_no_hp"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="2dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:layout_marginStart="2dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- TextView Nilai -->
+                <TextView
+                    android:id="@+id/tvCARD_PEGAWAI_nohp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textSize="14sp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="2dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="1dp">
+
+                <!-- TextView Label -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cabang"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:layout_marginStart="2dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- TextView Nilai -->
+                <TextView
+                    android:id="@+id/tvCARD_PEGAWAI_cabang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textSize="14sp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="8dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="4dp">
+
+                <!-- TextView Label -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/card_pelanggan_terdaftar"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:layout_marginStart="2dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- TextView Nilai -->
+                <TextView
+                    android:id="@+id/tvCARD_PEGAWAI_terdaftar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textSize="14sp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="8dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btn_hubungi_pegawai"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/card_pegawai_hubungi"
+                    android:backgroundTint="#58097c"
+                    android:textColor="@android:color/white"
+                    android:layout_marginEnd="8dp"/>
+
+                <Button
+                    android:id="@+id/btn_lihat_pegawai"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/card_pegawai_lihat"
+                    android:backgroundTint="#8e5ca3"
+                    android:textColor="@android:color/white"/>
+
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

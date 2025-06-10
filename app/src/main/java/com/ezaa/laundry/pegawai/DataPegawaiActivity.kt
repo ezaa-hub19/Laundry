@@ -1,7 +1,9 @@
 package com.ezaa.laundry.pegawai
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -20,67 +22,127 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
 class DataPegawaiActivity : AppCompatActivity() {
-    val database = FirebaseDatabase.getInstance()
-    val myRef = database.getReference("pegawai")
-    lateinit var rvDATA_PEGAWAI: RecyclerView
-    lateinit var fabDATA_PEGAWAI_Tambah: FloatingActionButton
-    lateinit var pegawaiList: ArrayList<modelpegawai>
+    private val database = FirebaseDatabase.getInstance()
+    private val myRef = database.getReference("pegawai")
+
+    private lateinit var rvDataPegawai: RecyclerView
+    private lateinit var fabTambahPegawai: FloatingActionButton
+    private lateinit var pegawaiList: ArrayList<modelpegawai>
+    private lateinit var adapter: adapter_data_pegawai
+    private var valueEventListener: ValueEventListener? = null
+
+    private fun init() {
+        rvDataPegawai = findViewById(R.id.rvDATA_PEGAWAI)
+        fabTambahPegawai = findViewById(R.id.fabDATA_PEGAWAI_Tambah)
+
+        pegawaiList = ArrayList()
+        adapter = adapter_data_pegawai(
+            pegawaiList,
+            onItemClick = { pegawai ->
+                // Untuk edit pegawai
+                val intent = Intent(this@DataPegawaiActivity, TambahPegawaiActivity::class.java).apply {
+                    putExtra("idPegawai", pegawai.idPegawai)
+                    putExtra("namaPegawai", pegawai.namaPegawai)
+                    putExtra("alamatPegawai", pegawai.alamatPegawai)
+                    putExtra("noHPPegawai", pegawai.noHPPegawai)
+                    putExtra("cabangPegawai", pegawai.cabangPegawai)
+                    putExtra("tanggalTerdaftar", pegawai.tanggalTerdaftar)
+                }
+                startActivity(intent)
+            },
+            onDeleteClick = { pegawai ->
+                // Untuk delete pegawai dengan konfirmasi
+                showDeleteConfirmation(pegawai)
+            }
+        )
+
+        rvDataPegawai.layoutManager = LinearLayoutManager(this)
+        rvDataPegawai.adapter = adapter
+    }
+
+    private fun getDATA() {
+        valueEventListener?.let { myRef.removeEventListener(it) } // hapus listener lama
+
+        val query = myRef.orderByChild("idPegawai").limitToLast(100)
+        valueEventListener = query.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                pegawaiList.clear()
+                for (dataSnapshot in snapshot.children) {
+                    val pegawai = dataSnapshot.getValue(modelpegawai::class.java)
+                    pegawai?.let { pegawaiList.add(it) }
+                }
+                adapter.notifyDataSetChanged()
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(this@DataPegawaiActivity, "Gagal ambil data: ${error.message}", Toast.LENGTH_SHORT).show()
+                Log.e("DataPegawai", "Firebase Error: ${error.toException()}")
+            }
+        })
+    }
+
+    // Fungsi untuk menampilkan konfirmasi delete
+    private fun showDeleteConfirmation(pegawai: modelpegawai) {
+        val builder = androidx.appcompat.app.AlertDialog.Builder(this)
+        builder.setTitle("Konfirmasi Hapus")
+        builder.setMessage("Apakah Anda yakin ingin menghapus data pegawai ${pegawai.namaPegawai ?: "ini"}?")
+
+        builder.setPositiveButton("Ya") { _, _ ->
+            deletePegawai(pegawai)
+        }
+
+        builder.setNegativeButton("Tidak") { dialog, _ ->
+            dialog.dismiss()
+        }
+
+        builder.create().show()
+    }
+
+    // Fungsi untuk menghapus pegawai
+    fun deletePegawai(pegawai: modelpegawai) {
+        val idPegawai = pegawai.idPegawai
+        if (!idPegawai.isNullOrEmpty()) {
+            val pegawaiRef = myRef.child(idPegawai)
+            pegawaiRef.removeValue()
+                .addOnSuccessListener {
+                    Toast.makeText(this, "Data pegawai berhasil dihapus", Toast.LENGTH_SHORT).show()
+                }
+                .addOnFailureListener { exception ->
+                    Toast.makeText(this, "Gagal menghapus data: ${exception.message}", Toast.LENGTH_SHORT).show()
+                    Log.e("DataPegawai", "Delete Error: ${exception}")
+                }
+        } else {
+            Toast.makeText(this, "ID Pegawai tidak valid", Toast.LENGTH_SHORT).show()
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_data_pegawai)
-        init()
-        val layoutManager = LinearLayoutManager(this)
-        layoutManager.reverseLayout = true
-        layoutManager.stackFromEnd = true
-        rvDATA_PEGAWAI.layoutManager=layoutManager
-        rvDATA_PEGAWAI.setHasFixedSize(true)
 
-        pegawaiList = arrayListOf<modelpegawai>()
-        getData()
-        tekan()
+        init()
+        getDATA()
+
+        fabTambahPegawai.setOnClickListener {
+            val intent = Intent(this, TambahPegawaiActivity::class.java)
+            startActivity(intent)
+        }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.data_pegawai)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-        fabDATA_PEGAWAI_Tambah.setOnClickListener {
-            val intent = Intent(this, TambahPegawaiActivity::class.java)
-            startActivity(intent)
-        }
     }
 
-    fun init(){
-        rvDATA_PEGAWAI = findViewById(R.id.rvDATA_PEGAWAI)
-        fabDATA_PEGAWAI_Tambah = findViewById(R.id.fabDATA_PEGAWAI_Tambah)
+    override fun onResume() {
+        super.onResume()
+        getDATA() // Refresh data setiap balik ke activity ini
     }
 
-    fun getData() {
-        val query = myRef.orderByChild("idPegawai").limitToLast(100)
-        query.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                if (snapshot.exists()) {
-                    pegawaiList.clear()
-                    for (dataSnapshot in snapshot.children) {
-                        val pegawai = dataSnapshot.getValue(modelpegawai::class.java)
-                        pegawaiList.add(pegawai!!)
-                    }
-                    val adapter = adapter_data_pegawai(pegawaiList)
-                    rvDATA_PEGAWAI.adapter = adapter
-                    adapter.notifyDataSetChanged()
-                }
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-                Toast.makeText(this@DataPegawaiActivity, "Data Gagal Dimuat", Toast.LENGTH_SHORT).show()
-            }
-        })
-    }
-    fun tekan() {
-        fabDATA_PEGAWAI_Tambah.setOnClickListener {
-        }
+    override fun onDestroy() {
+        super.onDestroy()
+        valueEventListener?.let { myRef.removeEventListener(it) }
     }
 }

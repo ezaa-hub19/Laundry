@@ -12,12 +12,15 @@ import androidx.core.view.WindowInsetsCompat
 import com.ezaa.laundry.R
 import com.ezaa.laundry.modeldata.modelpegawai
 import com.google.firebase.database.FirebaseDatabase
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 class TambahPegawaiActivity : AppCompatActivity() {
+
     private val database = FirebaseDatabase.getInstance()
     private val myRef = database.getReference("pegawai")
 
-    private lateinit var tvJudul: TextView
     private lateinit var etNama: EditText
     private lateinit var etAlamat: EditText
     private lateinit var etNoHP: EditText
@@ -28,83 +31,141 @@ class TambahPegawaiActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_tambah_pegawai)
-        init()
-        btSimpan.setOnClickListener{
-            cekValidasi()
-        }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.tambah_pegawai)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-    }
 
-    fun init() {
-        tvJudul = findViewById(R.id.tvTambahPegawai)
+        // Inisialisasi View
         etNama = findViewById(R.id.etNamaLengkapPegawai)
         etAlamat = findViewById(R.id.etAlamatPegawai)
         etNoHP = findViewById(R.id.etNoHPPegawai)
         etCabang = findViewById(R.id.etCabangPegawai)
         btSimpan = findViewById(R.id.btSimpanPegawai)
+
+        val idPegawai = intent.getStringExtra("idPegawai")
+        val isEdit = idPegawai != null
+        val namaPegawai = intent.getStringExtra("namaPegawai")
+        val alamatPegawai = intent.getStringExtra("alamatPegawai")
+        val noHPPegawai = intent.getStringExtra("noHPPegawai")
+        val cabangPegawai = intent.getStringExtra("cabangPegawai")
+
+        // Set judul halaman berdasarkan mode
+        setupTitle(isEdit)
+
+        if (idPegawai != null) {
+            // Isi form untuk edit
+            etNama.setText(namaPegawai)
+            etAlamat.setText(alamatPegawai)
+            etNoHP.setText(noHPPegawai)
+            etCabang.setText(cabangPegawai)
+
+            // Ubah text tombol untuk mode edit
+            btSimpan.text = getString(R.string.update_pelanggan)
+        }
+
+        // Set event listener untuk tombol simpan
+        btSimpan.setOnClickListener {
+            validasi()
+        }
     }
 
-    fun cekValidasi() {
-        val nama = etNama.text.toString()
-        val alamat = etAlamat.text.toString()
-        val noHp = etNoHP.text.toString()
-        val cabang = etCabang.text.toString()
+    private fun setupTitle(isEdit: Boolean) {
+        // Atau jika ada TextView khusus untuk title di layout
+        val titleTextView = findViewById<TextView>(R.id.tvJudulTambahPegawai)
+        titleTextView?.text = if (isEdit)
+            getString(R.string.sunting_pegawai)
+        else
+            getString(R.string.title_tambahpegawai)
+    }
+
+    private fun validasi() {
+        val nama = etNama.text.toString().trim()
+        val alamat = etAlamat.text.toString().trim()
+        val noHP = etNoHP.text.toString().trim()
+        val cabang = etCabang.text.toString().trim()
 
         if (nama.isEmpty()) {
-            etNama.error = this.getString(R.string.validasi_nama_pegawai)
-            Toast.makeText(this, this.getString(R.string.validasi_nama_pegawai), Toast.LENGTH_SHORT).show()
+            etNama.error = getString(R.string.validasi_nama_pegawai)
             etNama.requestFocus()
             return
         }
         if (alamat.isEmpty()) {
-            etAlamat.error = this.getString(R.string.validasi_alamat_pegawai)
-            Toast.makeText(this, this.getString(R.string.validasi_alamat_pegawai), Toast.LENGTH_SHORT).show()
+            etAlamat.error = getString(R.string.validasi_alamat_pegawai)
             etAlamat.requestFocus()
             return
         }
-        if (noHp.isEmpty()) {
-            etNoHP.error = this.getString(R.string.validasi_no_hp_pegawai)
-            Toast.makeText(this, this.getString(R.string.validasi_no_hp_pegawai), Toast.LENGTH_SHORT).show()
+        if (noHP.isEmpty()) {
+            etNoHP.error = getString(R.string.validasi_no_hp_pegawai)
             etNoHP.requestFocus()
             return
         }
         if (cabang.isEmpty()) {
-            etCabang.error = this.getString(R.string.validasi_cabang_pegawai)
-            Toast.makeText(this, this.getString(R.string.validasi_cabang_pegawai), Toast.LENGTH_SHORT).show()
+            etCabang.error = getString(R.string.validasi_cabang_pegawai)
             etCabang.requestFocus()
             return
         }
-        simpan()
+        if (!noHP.matches(Regex("\\d{10,13}"))) {
+            etNoHP.error = "Nomor HP harus terdiri dari 10-13 angka"
+            etNoHP.requestFocus()
+            return
+        }
+
+        // Jika semua validasi lolos, simpan data
+        simpan(nama, alamat, noHP, cabang)
     }
 
-    fun simpan() {
-        val pegawaiBaru = myRef.push()
-        val pegawaiid = pegawaiBaru.key
-        val data = modelpegawai(
-            pegawaiid.toString(),
-            etNama.text.toString(),
-            etAlamat.text.toString(),
-            etNoHP.text.toString(),
-            etCabang.text.toString()
-        )
-        pegawaiBaru.setValue(data).addOnSuccessListener {
-            Toast.makeText(
-                this,
-                this.getString(R.string.sukses_simpan_pegawai),
-                Toast.LENGTH_SHORT).show()
-            finish()
+    private fun simpan(nama: String, alamat: String, noHP: String, cabang: String) {
+        val idPegawai = intent.getStringExtra("idPegawai")
+        val isEdit = idPegawai != null
+
+        val sdf = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
+        val tanggalSekarang = sdf.format(Date())
+
+        if (isEdit) {
+            // MODE EDIT
+            val dataUpdate = mapOf<String, Any>(
+                "namaPegawai" to nama,
+                "alamatPegawai" to alamat,
+                "noHPPegawai" to noHP,
+                "cabangPegawai" to cabang,
+                "tanggalTerdaftar" to tanggalSekarang // Optional: bisa skip kalau gak mau ubah tanggal
+            )
+
+            myRef.child(idPegawai!!)
+                .updateChildren(dataUpdate)
+                .addOnSuccessListener {
+                    Toast.makeText(this, getString(R.string.sukses_update_pegawai), Toast.LENGTH_SHORT).show()
+                    finish()
+                }
+                .addOnFailureListener {
+                    Toast.makeText(this, getString(R.string.gagal_update_pegawai), Toast.LENGTH_SHORT).show()
+                }
+
+        } else {
+            // MODE TAMBAH BARU
+            val pegawaiBaru = myRef.push()
+            val pegawaiId = pegawaiBaru.key ?: return
+
+            val dataBaru = modelpegawai(
+                idPegawai = pegawaiId,
+                namaPegawai = nama,
+                alamatPegawai = alamat,
+                noHPPegawai = noHP,
+                cabangPegawai = cabang,
+                tanggalTerdaftar = tanggalSekarang
+            )
+
+            pegawaiBaru.setValue(dataBaru)
+                .addOnSuccessListener {
+                    Toast.makeText(this, getString(R.string.sukses_simpan_pegawai), Toast.LENGTH_SHORT).show()
+                    finish()
+                }
+                .addOnFailureListener {
+                    Toast.makeText(this, getString(R.string.gagal_simpan_pegawai), Toast.LENGTH_SHORT).show()
+                }
         }
-            .addOnFailureListener {
-                Toast.makeText(
-                    this,
-                    this.getString(R.string.gagal_simpan_pegawai),
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
     }
 }

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tambah_cabang"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@android:color/white"
+    tools:context="com.ezaa.laundry.cabang.TambahCabangActivity">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/tvTambahCabang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tambah Cabang"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:paddingBottom="16dp" />
+
+    <TextView
+        android:id="@+id/tvNamaCabang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:text="Nama Cabang : "
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:layout_marginStart="7dp" />
+
+    <!-- Full Name Input -->
+    <EditText
+        android:id="@+id/etNamaCabang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nama Cabang"
+        android:layout_marginTop="5dp"
+        android:padding="10dp"
+        android:background="@android:drawable/edit_text" />
+
+    <TextView
+        android:id="@+id/tvAlamatCabang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Alamat : "
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:layout_marginStart="7dp" />
+
+    <!-- Phone Number Input -->
+    <EditText
+        android:id="@+id/etAlamatCabang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Alamat"
+        android:padding="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@android:drawable/edit_text" />
+
+    <TextView
+        android:id="@+id/tvNoHPCabang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="No HP :"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:layout_marginStart="7dp" />
+
+    <!-- Phone Number Input -->
+    <EditText
+        android:id="@+id/etNoHPCabang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="No HP"
+        android:padding="10dp"
+        android:inputType="number"
+        android:layout_marginTop="5dp"
+        android:background="@android:drawable/edit_text" />
+
+    <!-- Submit Button -->
+    <Button
+        android:id="@+id/btSimpanCabang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Simpan"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#25ff04"
+        android:textColor="@android:color/white"/>
+
+</LinearLayout>
