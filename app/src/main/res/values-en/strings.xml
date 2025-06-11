@@ -136,4 +136,10 @@
     <string name="no_hp">Phone number : %1$s</string>
     <string name="nama_layanan">Service Name : %1$s</string>
     <string name="harga_layanan">Price : %1$s</string>
+    <string name="LoginBerhasil">Login Successful!</string>
+    <string name="Passwordsalah">Incorrect Password</string>
+    <string name="Datapenggunatidakvalid">Invalid User Data</string>
+    <string name="Nomorbelumterdaftar">Number not registered</string>
+    <string name="Registerberhasil">Register Successful!</string>
+    <string name="Silakanregisteruntukmelanjutkan">Please register to continue</string>
 </resources>
