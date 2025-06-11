@@ -14,7 +14,7 @@
         android:id="@+id/tvJudulTambahPegawai"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Tambah Pegawai"
+        android:text="@string/title_tambahpegawai"
         android:textSize="18sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -25,7 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="7dp"
-        android:text="Nama Lengkap : "
+        android:text="@string/card_pegawai_nama"
         android:textStyle="bold"
         android:textSize="15sp"
         android:layout_marginStart="7dp" />
@@ -35,7 +35,7 @@
         android:id="@+id/etNamaLengkapPegawai"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nama Lengkap"
+        android:hint="@string/card_pegawai_nama"
         android:layout_marginTop="5dp"
         android:padding="10dp"
         android:background="@android:drawable/edit_text" />
@@ -45,7 +45,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Alamat : "
+        android:text="@string/card_pegawai_alamat"
         android:textStyle="bold"
         android:textSize="15sp"
         android:layout_marginStart="7dp" />
@@ -55,7 +55,7 @@
         android:id="@+id/etAlamatPegawai"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Alamat"
+        android:hint="@string/card_pegawai_alamat"
         android:padding="10dp"
         android:layout_marginTop="5dp"
         android:background="@android:drawable/edit_text" />
@@ -65,7 +65,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="No.HP Aktif : "
+        android:text="@string/card_pegawai_no_hp"
         android:textStyle="bold"
         android:textSize="15sp"
         android:layout_marginStart="7dp" />
@@ -75,7 +75,7 @@
         android:id="@+id/etNoHPPegawai"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="No HP Aktif"
+        android:hint="@string/card_pegawai_no_hp"
         android:padding="10dp"
         android:layout_marginTop="5dp"
         android:inputType="phone"
@@ -86,7 +86,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Cabang :"
+        android:text="@string/cabang"
         android:textStyle="bold"
         android:textSize="15sp"
         android:layout_marginStart="7dp" />
@@ -96,7 +96,7 @@
         android:id="@+id/etCabangPegawai"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Cabang"
+        android:hint="@string/cabang"
         android:padding="10dp"
         android:layout_marginTop="5dp"
         android:background="@android:drawable/edit_text" />
@@ -106,7 +106,7 @@
         android:id="@+id/btSimpanPegawai"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Simpan"
+        android:text="@string/simpan"
         android:layout_marginTop="20dp"
         android:backgroundTint="#25ff04"
         android:textColor="@android:color/white"/>

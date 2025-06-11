@@ -27,6 +27,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.cancel
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.io.IOException
 import java.io.OutputStream
@@ -158,7 +159,7 @@ class InvoiceActivity : AppCompatActivity() {
 
     private fun setupInvoiceData() {
         // Header info
-        tvBusinessName.text = "Mahsok Laundry"
+        tvBusinessName.text = "Ezaa Laundry"
         tvBranch.text = "Solo"
 
         // Transaction details
@@ -243,7 +244,7 @@ class InvoiceActivity : AppCompatActivity() {
         return """
             Halo $namaPelanggan 👋,
             
-            🔖 *MAHSOK LAUNDRY - SOLO*
+            🔖 *Ezaa LAUNDRY - Surakarta*
             
             🆔 *ID Transaksi:* $noTransaksi  
             📅 *Tanggal:* $tanggalTransaksi  
@@ -255,7 +256,7 @@ class InvoiceActivity : AppCompatActivity() {
             🙏 Terima kasih telah mempercayakan cucian Anda kepada kami.  
             Kami akan memberikan pelayanan terbaik untuk Anda!
             
-            📍 Mahsok Laundry - Cabang Solo  
+            📍 Ezaa Laundry - Cabang Solo  
         """.trimIndent()
     }
 
@@ -436,25 +437,16 @@ class InvoiceActivity : AppCompatActivity() {
             return
         }
 
-//        coroutineScope.launch {
-//            try {
-//                val result = withContext(Dispatchers.IO) {
-//                    printToBluetoothDevice(bluetoothAdapter, macAddress)
-//                }
-//
-//                if (result) {
-//                    showToast(getString(R.string.print_success))
-//                    // Tambahkan laporan setelah berhasil cetak
-////                    addLaporanToDataLaporan()
-////                    goToDataLaporan()
-//                } else {
-//                    showToast(getString(R.string.print_failed))
-//                }
-//            } catch (e: Exception) {
-//                showToast("Error: ${e.message}")
-//                e.printStackTrace()
-//            }
-//        }
+        coroutineScope.launch {
+            try {
+                val result = withContext(Dispatchers.IO) {
+                    printToBluetoothDevice(bluetoothAdapter, macAddress)
+                }
+            } catch (e: Exception) {
+                showToast("Error: ${e.message}")
+                e.printStackTrace()
+            }
+        }
     }
 
 //    private fun goToDataLaporan() {
@@ -465,41 +457,41 @@ class InvoiceActivity : AppCompatActivity() {
 //        finish()
 //    }
 
-//    private suspend fun printToBluetoothDevice(
-//        bluetoothAdapter: BluetoothAdapter,
-//        macAddress: String
-//    ): Boolean {
-//        var socket: BluetoothSocket? = null
-//        var outputStream: OutputStream? = null
-//
-//        return try {
-//            val device: BluetoothDevice = bluetoothAdapter.getRemoteDevice(macAddress)
-//            val uuid = UUID.fromString(SPP_UUID)
-//
-//            socket = device.createRfcommSocketToServiceRecord(uuid)
-//            socket.connect()
-//
-//            outputStream = socket.outputStream
-//            val receiptData = generateReceiptData()
-//            outputStream.write(receiptData.toByteArray())
-//            outputStream.flush()
-//
-//            true
-//        } catch (e: IOException) {
-//            e.printStackTrace()
-//            false
-//        } catch (e: SecurityException) {
-//            e.printStackTrace()
-//            false
-//        } finally {
-//            try {
-//                outputStream?.close()
-//                socket?.close()
-//            } catch (e: IOException) {
-//                e.printStackTrace()
-//            }
-//        }
-//    }
+    private suspend fun printToBluetoothDevice(
+        bluetoothAdapter: BluetoothAdapter,
+        macAddress: String
+    ): Boolean {
+        var socket: BluetoothSocket? = null
+        var outputStream: OutputStream? = null
+
+        return try {
+            val device: BluetoothDevice = bluetoothAdapter.getRemoteDevice(macAddress)
+            val uuid = UUID.fromString(SPP_UUID)
+
+            socket = device.createRfcommSocketToServiceRecord(uuid)
+            socket.connect()
+
+            outputStream = socket.outputStream
+            val receiptData = generateReceiptData()
+            outputStream.write(receiptData.toByteArray())
+            outputStream.flush()
+
+            true
+        } catch (e: IOException) {
+            e.printStackTrace()
+            false
+        } catch (e: SecurityException) {
+            e.printStackTrace()
+            false
+        } finally {
+            try {
+                outputStream?.close()
+                socket?.close()
+            } catch (e: IOException) {
+                e.printStackTrace()
+            }
+        }
+    }
 
     private fun generateReceiptData(): String {
         val receipt = StringBuilder()

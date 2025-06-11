@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:background="#0044e9"
+            android:background="#b000e0"
             android:layout_marginBottom="4dp">
 
             <TextView
@@ -189,7 +189,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/delete"
-                    android:backgroundTint="#0044e9"
+                    android:backgroundTint="#b000e0"
                     android:textColor="@android:color/white"
                     android:layout_marginEnd="8dp"/>
 
@@ -199,7 +199,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/card_pegawai_lihat"
-                    android:backgroundTint="#3c9dff"
+                    android:backgroundTint="#e480ff"
                     android:textColor="@android:color/white"/>
 
             </LinearLayout>

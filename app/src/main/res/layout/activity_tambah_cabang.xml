@@ -14,7 +14,7 @@
         android:id="@+id/tvTambahCabang"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Tambah Cabang"
+        android:text="@string/title_tambahcabang"
         android:textSize="18sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -25,7 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="7dp"
-        android:text="Nama Cabang : "
+        android:text="@string/card_cabang_nama"
         android:textStyle="bold"
         android:textSize="15sp"
         android:layout_marginStart="7dp" />
@@ -35,7 +35,7 @@
         android:id="@+id/etNamaCabang"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nama Cabang"
+        android:hint="@string/card_cabang_nama"
         android:layout_marginTop="5dp"
         android:padding="10dp"
         android:background="@android:drawable/edit_text" />
@@ -45,7 +45,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Alamat : "
+        android:text="@string/card_pelanggan_alamat"
         android:textStyle="bold"
         android:textSize="15sp"
         android:layout_marginStart="7dp" />
@@ -55,7 +55,7 @@
         android:id="@+id/etAlamatCabang"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Alamat"
+        android:hint="@string/card_pelanggan_alamat"
         android:padding="10dp"
         android:layout_marginTop="5dp"
         android:background="@android:drawable/edit_text" />
@@ -65,7 +65,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="No HP :"
+        android:text="@string/card_pelanggan_no_hp"
         android:textStyle="bold"
         android:textSize="15sp"
         android:layout_marginStart="7dp" />
@@ -75,7 +75,7 @@
         android:id="@+id/etNoHPCabang"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="No HP"
+        android:hint="@string/card_pelanggan_no_hp"
         android:padding="10dp"
         android:inputType="number"
         android:layout_marginTop="5dp"
@@ -86,7 +86,7 @@
         android:id="@+id/btSimpanCabang"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Simpan"
+        android:text="@string/simpan"
         android:layout_marginTop="20dp"
         android:backgroundTint="#25ff04"
         android:textColor="@android:color/white"/>

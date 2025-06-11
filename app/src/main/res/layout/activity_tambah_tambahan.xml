@@ -14,7 +14,7 @@
         android:id="@+id/tvTambahTambahan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Tambah Tambahan"
+        android:text="@string/tambahantambah"
         android:textSize="18sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -25,7 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="7dp"
-        android:text="Nama Tambahan : "
+        android:text="@string/card_tambahan_nama"
         android:textStyle="bold"
         android:textSize="15sp"
         android:layout_marginStart="7dp" />
@@ -35,7 +35,7 @@
         android:id="@+id/etNamaTambahan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nama Tambahan"
+        android:hint="@string/card_tambahan_nama"
         android:layout_marginTop="5dp"
         android:padding="10dp"
         android:background="@android:drawable/edit_text" />
@@ -45,7 +45,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Harga : "
+        android:text="@string/harga"
         android:textStyle="bold"
         android:textSize="15sp"
         android:layout_marginStart="7dp" />
@@ -55,7 +55,7 @@
         android:id="@+id/etHargaTambahan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Harga"
+        android:hint="@string/harga"
         android:padding="10dp"
         android:layout_marginTop="5dp"
         android:inputType="number"
@@ -66,7 +66,7 @@
         android:id="@+id/btSimpanTambahan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Simpan"
+        android:text="@string/simpan"
         android:layout_marginTop="20dp"
         android:backgroundTint="#25ff04"
         android:textColor="@android:color/white"/>

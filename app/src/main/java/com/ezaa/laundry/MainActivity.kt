@@ -99,10 +99,10 @@ class MainActivity : AppCompatActivity() {
         // Mengatur pesan berdasarkan waktu
         val hour = calendar.get(Calendar.HOUR_OF_DAY)
         val greeting = when {
-            hour in 5..11 -> "Selamat Pagi, Reza"
-            hour in 12..14 -> "Selamat Siang, Reza"
-            hour in 15..17 -> "Selamat Sore, Reza"
-            else -> "Selamat Malam, Reza"
+            hour in 5..11 -> getString(R.string.selamatpagi)
+            hour in 12..14 -> getString(R.string.selamatsiang)
+            hour in 15..17 -> getString(R.string.selamatsore)
+            else -> getString(R.string.selamatmalam)
         }
         helloTextView.text = greeting
     }

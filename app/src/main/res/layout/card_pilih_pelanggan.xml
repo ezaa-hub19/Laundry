@@ -19,7 +19,7 @@
             android:id="@+id/tvCARD_PILIHPELANGGAN_ID"
             android:layout_width="match_parent"
             android:layout_height="35dp"
-            android:background="#00BFA6"
+            android:background="#ff463f"
             android:gravity="center_vertical"
             android:paddingStart="12dp"
             android:text="1"

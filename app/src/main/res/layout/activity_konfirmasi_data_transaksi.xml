@@ -42,7 +42,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:background="@drawable/rounded_background"
                 android:padding="12dp">
 
                 <TextView
@@ -65,7 +64,7 @@
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:text="Nama"
-                        android:textColor="#1A1A1A"
+                        android:textColor="@color/black"
                         android:textSize="14sp"/>
 
                     <TextView
@@ -157,7 +156,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:background="@drawable/rounded_background"
                 android:padding="12dp"
                 android:layout_marginBottom="20dp">
 
@@ -179,7 +177,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/harga"
                     android:textSize="14sp"
-                    android:textColor="#FF8F00"
+                    android:textColor="#2E5BFF"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -235,7 +233,8 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_marginEnd="12dp"
-                app:tint="#2E7D32" />
+                app:tint="#2E7D32"
+                android:src="@drawable/img_3"/>
 
             <TextView
                 android:id="@+id/tvTotalLabel"
@@ -280,7 +279,7 @@
             android:text="Batal"
             android:textSize="16sp"
             android:textStyle="bold"
-            android:backgroundTint="#FF6B35"
+            android:backgroundTint="#D32F2F"
             android:layout_marginEnd="8dp"
             android:stateListAnimator="@null" />
 
@@ -292,7 +291,7 @@
             android:text="Pembayaran"
             android:textSize="16sp"
             android:textStyle="bold"
-            android:backgroundTint="#4CAF50"
+            android:backgroundTint="#25ff04"
             android:layout_marginStart="8dp"
             android:stateListAnimator="@null" />
     </LinearLayout>

@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:background="#0044e9"
+            android:background="#00eda3"
             android:layout_marginBottom="4dp">
 
             <TextView

@@ -19,7 +19,7 @@
             android:id="@+id/tvCARD_PILIHLAYANAN_ID"
             android:layout_width="match_parent"
             android:layout_height="35dp"
-            android:background="#BF004C"
+            android:background="#ff463f"
             android:gravity="center_vertical"
             android:paddingStart="12dp"
             android:textColor="#FFFFFF"

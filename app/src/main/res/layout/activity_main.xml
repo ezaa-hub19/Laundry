@@ -104,7 +104,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Transaksi"
+                        android:text="@string/Transaksi"
                         android:textSize="14sp"
                         android:textColor="@color/black"
                         android:layout_marginTop="4dp" />
@@ -130,7 +130,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Pelanggan"
+                        android:text="@string/pelanggan"
                         android:textSize="14sp"
                         android:textColor="@color/black"
                         android:layout_marginTop="4dp" />
@@ -153,7 +153,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Laporan"
+                        android:text="@string/laporan"
                         android:textSize="14sp"
                         android:textColor="@color/black"
                         android:layout_marginTop="4dp" />
@@ -166,7 +166,7 @@
         android:id="@+id/reminder_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Siap melayani pelanggan dengan setulus hati"
+        android:text="@string/Siap_melayani_pelanggan_dengan_setulus_hati"
         android:textSize="16sp"
         android:textColor="@color/black"
         android:layout_marginStart="15dp"
@@ -179,7 +179,7 @@
         android:id="@+id/sub_reminder_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Jangan Kecewakan Pelanggan"
+        android:text="@string/Jangan_Kecewakan_Pelanggan"
         android:layout_marginStart="15dp"
         android:textSize="14sp"
         android:textColor="@color/black"
@@ -260,7 +260,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="Layanan"
+                        android:text="@string/layanan"
                         android:textColor="@color/black"
                         android:textSize="14sp" />
                 </LinearLayout>
@@ -291,7 +291,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="Tambahan"
+                        android:text="@string/tambahan"
                         android:textColor="@color/black"
                         android:textSize="14sp" />
                 </LinearLayout>
@@ -322,7 +322,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="Pegawai"
+                        android:text="@string/pegawai"
                         android:textColor="@color/black"
                         android:textSize="14sp" />
                 </LinearLayout>
@@ -352,7 +352,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="Cabang"
+                        android:text="@string/cabang"
                         android:textColor="@color/black"
                         android:textSize="14sp" />
                 </LinearLayout>
@@ -382,7 +382,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="Printer"
+                        android:text="@string/cetak"
                         android:textColor="@color/black"
                         android:textSize="14sp" />
                 </LinearLayout>
